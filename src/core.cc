@@ -1,6 +1,6 @@
 #include <dpp/dpp.h>
 #include "program/sillystr.h"
-#include "program/sllmacros.h"
+#include "program/sllconst.h"
 
 int main(){
     dpp::cluster bot(gSillyTock);
