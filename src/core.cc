@@ -12,7 +12,7 @@ int main(){
             std::string iEmbedCommd = std::to_string(iDataEvent.command.channel_id);
 
             if(iDataCommd == gCommDef1){
-                iDataEvent.reply(dpp::message(iEmbedCommd, dpp::embed().set_color(fSSLCOLOR1).set_title(gCommRes1)));
+                iDataEvent.reply(dpp::message(iEmbedCommd, dpp::embed().set_color(fSSLCOLOR4).set_title(gCommRes1)));
             } else {
                 iDataEvent.reply(gCommErr);
             }
