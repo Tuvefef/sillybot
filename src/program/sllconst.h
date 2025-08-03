@@ -1,5 +1,6 @@
-#ifndef MACROSH_
-#define MACROSH_
+#ifndef SILLYCNTS
+#define SILLYCNTS
+
 #include <cstdint>
 
 constexpr uint32_t fSSLCOLOR1 = 0xb12ffff;
