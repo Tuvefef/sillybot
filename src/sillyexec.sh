@@ -2,7 +2,7 @@
 
 mkexecall="make all"
 mkexecrun="make run"
-chrformat="\033[3;36m"
+chrformat="\033[3;1;36m"
 
 echo    -e ${chrformat}
 echo    -e "compiling to binaries..."
