@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "program/sillystr.hh"
+#include "../program/sillystr.hh"
 
 char* crhsllTock1 = std::getenv("SILLTOCKEN");
 char* crhsllTock2 = std::getenv("WHTRTOCKEN");
