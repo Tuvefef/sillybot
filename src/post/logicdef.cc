@@ -2,10 +2,12 @@
 #include "../program/madecomm.hh"
 #include "../program/whtrcomm.hh"
 #include "../program/sillystr.hh"
+#include "../program/ddcomm.hh"
 
 void ssslllogic::minitlogic(dpp::cluster& bot){
     mvcomm.push_back(std::make_unique<mmadecomm>());
     mvcomm.push_back(std::make_unique<mwhtrcomm>());
+    mvcomm.push_back(std::make_unique<mddcomm>());
 
     bot.on_slashcommand([this](const dpp::slashcommand_t& iDataEvent){
         for(const auto& comm : mvcomm){

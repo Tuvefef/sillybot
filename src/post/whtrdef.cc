@@ -1,7 +1,7 @@
 #include "../program/whtrcomm.hh"
 #include "../program/sillystr.hh"
 #include "../program/sllconst.h"
-//#include "../program/sllweather.hh"
+#include "../program/sllweather.hh"
 #include <cpr/cpr.h>
 #include <nlohmann/json.hpp>
 
@@ -10,11 +10,10 @@ std::string mwhtrcomm::mdefcomm() const{
 }
 
 std::string mwhtrcomm::mdefdesc() const{
-    return "get the wheather of a city";
+    return gCommRes3;
 }
 
-std::string fWheaterRegister(const nlohmann::json& esymdata, const std::string& esymcity){
-    std::ostringstream gSStrm;
+std::string fWheaterRegister(const nlohmann::json& esymdata, const std::string& esymcity, std::ostringstream& gSStrm){
     std::string gCity = esymcity.empty() ? "unknown city!" : esymcity;
 
     std::string gdesc = esymdata["weather"][0]["description"];
@@ -39,8 +38,9 @@ void mwhtrcomm::mdefExecComm(const dpp::slashcommand_t& iDataEvent){
     cpr::Response mrm = cpr::Get(cpr::Url{gUrl});
 
     if(mrm.status_code == 200){
+        std::ostringstream gSStrm;
         nlohmann::json gDataw = nlohmann::json::parse(mrm.text);
-        std::string gresult = fWheaterRegister(gDataw, gCity);
+        std::string gresult = fWheaterRegister(gDataw, gCity, gSStrm);
 
         iDataEvent.reply(dpp::message(iEmbedCommd, 
             dpp::embed()

@@ -1,5 +1,5 @@
 BIN = sllbin
-SOURCES = core.cc post/coredef.cc post/madedef.cc post/whtrdef.cc post/logicdef.cc 
+SOURCES := core.cc post/coredef.cc post/madedef.cc post/whtrdef.cc post/logicdef.cc post/ddcore.cc
 CXX = g++
 CXXVER = -std=c++20 
 LDFL = -ldpp

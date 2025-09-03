@@ -5,6 +5,6 @@
 #include <sstream>
 #include <nlohmann/json.hpp>
 
-std::string fWheaterRegister(const nlohmann::json& esymdata, const std::string& esymcity);
+std::string fWheaterRegister(const nlohmann::json& esymdata, const std::string& esymcity, std::ostringstream& gSStrm);
 
 #endif
